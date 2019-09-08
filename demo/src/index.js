@@ -613,9 +613,31 @@ class App extends Component {
       </div>
     )
   }
-
+  getBatchList = () => {
+		return axios.get('http://198.13.47.188:8080/graph/BTPBATCH001');
+	}
+	
+	fetchBatchList = async () => {
+		console.log("q123123123123123");
+		const response = await this.getBatchList();
+		this.setState({
+			...this.state,
+			data: response.data,
+		});
+		console.log("qqqqqq : " + (this.state.data)['batchNodes'][0]['batchId']);
+	}
 
   render() {
+    if(this.state.data != null){
+
+			aaa = JSON.stringify(this.state.data.batchNodes);
+			let batchNodes = this.state.data.batchNodes;
+			for(var k = 0; k < batchNodes.length; k++) {
+
+				console.log('aaasadasdasadw222222aa: ' + batchNodes[k].batchId);
+
+      }
+    }
     return (
       // <MuiThemeProvider theme={purple}>
 
