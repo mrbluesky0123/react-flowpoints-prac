@@ -657,7 +657,7 @@ class App extends Component {
             onClick: (key_a, key_b, e) => {
               console.log('Click connection ' + key_a + ' -> ' + key_b)
             }
-          }
+          } 
         }}
         style={{ backgroundColor:'lightblue' }}
         startPosition={{ x:250, y:100 }}
